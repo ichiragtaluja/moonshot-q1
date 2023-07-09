@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { createContext } from "react";
-const DataContext = createContext();
+import { data } from "../data/data";
 
+const DataContext = createContext();
 export const DataProvider = ({ children }) => {
-  return <DataContext.Provider value={{}}>{children}</DataContext.Provider>;
+  const [continents, setContinents] = useState(data?.continents);
+  return (
+    <DataContext.Provider value={{ continents }}>
+      {children}
+    </DataContext.Provider>
+  );
 };
 
 export const useData = () => useContext(DataContext);
