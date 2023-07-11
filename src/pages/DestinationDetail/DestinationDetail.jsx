@@ -22,7 +22,7 @@ export const DestinationDetail = () => {
   return (
     <div>
       <h1>{selectedDestination?.name}</h1>
-      <p>Description:{selectedDestination.description}</p>
+      <p>Description:{selectedDestination?.description}</p>
       <p>Rating: {selectedDestination?.ratings}</p>
       <img src={selectedDestination?.image} />
       <p> Website: {selectedDestination?.website}</p>
